@@ -7,6 +7,9 @@ import { AddHeroComponent } from './superhero/components/add-hero/add-hero.compo
 import { HeroListComponent } from './superhero/components/hero-list/hero-list.component';
 import { SearchHeroComponent } from './superhero/components/search-hero/search-hero.component';
 import { SharedModule } from './shared/shared.module';
+import { SearchPageComponent } from './superhero/pages/search-page/search-page.component';
+import { HerolistPageComponent } from './superhero/pages/herolist-page/herolist-page.component';
+import { AddheroPageComponent } from './superhero/pages/addhero-page/addhero-page.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,9 @@ import { SharedModule } from './shared/shared.module';
     AddHeroComponent,
     HeroListComponent,
     SearchHeroComponent,
+    SearchPageComponent,
+    HerolistPageComponent,
+    AddheroPageComponent,
   ],
   imports: [
     BrowserModule,
