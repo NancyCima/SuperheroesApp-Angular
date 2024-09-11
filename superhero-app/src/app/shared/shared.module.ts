@@ -4,6 +4,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SearchHeroComponent } from '../superhero/components/search-hero/search-hero.component';
 import { HeroListComponent } from '../superhero/components/hero-list/hero-list.component';
 import { AddHeroComponent } from '../superhero/components/add-hero/add-hero.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [NavBarComponent,
@@ -11,7 +12,7 @@ import { AddHeroComponent } from '../superhero/components/add-hero/add-hero.comp
     HeroListComponent,
     AddHeroComponent
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, MatToolbarModule],
   exports: [NavBarComponent,
     SearchHeroComponent,
     HeroListComponent,

@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { SearchPageComponent } from './superhero/pages/search-page/search-page.component';
 import { HerolistPageComponent } from './superhero/pages/herolist-page/herolist-page.component';
 import { AddheroPageComponent } from './superhero/pages/addhero-page/addhero-page.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddheroPageComponent } from './superhero/pages/addhero-page/addhero-pag
     SharedModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
