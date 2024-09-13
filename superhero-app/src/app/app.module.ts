@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { HttpClientModule, withFetch} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -14,7 +15,8 @@ import { SuperHeroModule } from './superhero/superhero.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    SuperHeroModule
+    SuperHeroModule,
+    HttpClientModule.withConfig({ withFetch: true })
   ],
   providers: [
     provideClientHydration(),
