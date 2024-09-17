@@ -7,6 +7,7 @@ import { AddHeroComponent } from '../superhero/components/add-hero/add-hero.comp
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
     SearchHeroComponent,
     HeroListComponent,
     AddHeroComponent,
+    Error404PageComponent
   ],
   imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule],
   exports: [
