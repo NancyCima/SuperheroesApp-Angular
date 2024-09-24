@@ -20,5 +20,6 @@ import { RouterModule } from '@angular/router';
     SingUpPageComponent,
   ],
   imports: [CommonModule, AuthRoutingModule, MaterialModule, RouterModule],
+  exports: [LoginPageComponent, MaterialModule]
 })
 export class AuthModule {}
