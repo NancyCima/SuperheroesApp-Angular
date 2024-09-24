@@ -1,0 +1,7 @@
+#home-container {
+    height: 100vh;
+    background-image: url('/superhero-app/src/assets/fondo.jpg') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
