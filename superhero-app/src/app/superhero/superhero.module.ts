@@ -1,40 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchPageComponent } from './pages/search-page/search-page.component';
-import { HerolistPageComponent } from './pages/herolist-page/herolist-page.component';
-import { AddheroPageComponent } from './pages/addhero-page/addhero-page.component';
-import { SharedModule } from '../shared/shared.module';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatSelectModule } from '@angular/material/select';
-import { SingUpPageComponent } from './pages/sing-up-page/sing-up-page.component';
+
+import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
+import { NewPageComponent } from './pages/new-page/new-page.component';
+import { AddHeroComponent } from './components/add-hero/add-hero.component';
+import { HeroListComponent } from './components/hero-list/hero-list.component';
+import { SearchHeroComponent } from './components/search-hero/search-hero.component';
+import { MaterialModule } from '../material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    SearchPageComponent,
-    HerolistPageComponent,
-    AddheroPageComponent,
-    LoginPageComponent,
-    SingUpPageComponent,
+    LayoutPageComponent,
+    NewPageComponent,
+    AddHeroComponent,
+    HeroListComponent,
+    SearchHeroComponent,
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-    MatSelectModule
-  ],
-  exports: [
-    SearchPageComponent,
-    HerolistPageComponent,
-    AddheroPageComponent,
-    LoginPageComponent,
-    SingUpPageComponent
-  ],
+  imports: [CommonModule, MaterialModule, ReactiveFormsModule],
 })
 export class SuperHeroModule {}

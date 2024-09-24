@@ -1,20 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { SuperHeroesService } from '../../../superhero/services/superheroes.services';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Hero } from '../../../superhero/interfaces/hero.interfaces';
+import { delay, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-herolist-page',
-  templateUrl: './herolist-page.component.html'
-  //styleUrls: ['./herolist-page.component.css']
+  templateUrl: './herolist-page.component.html',
+  styles: ``,
 })
-export class HerolistPageComponent implements OnInit {
-  heroes: any[] = [];
+export class HeroListPageComponent {
+  hero?: Hero;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    public superheroservices: SuperHeroesService,
+    public activateRoute: ActivatedRoute,
+    public router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('assets/datos.json').subscribe(
-      (data) => this.heroes = data,
-      (error) => console.error('Error loading file:', error)
-    );
+    this.activateRoute.params
+      .pipe(
+        delay(3000),
+        switchMap(({ id }) => this.superheroservices.getHeroById(id))
+      )
+      .subscribe((hero) => {
+        if (!hero) return this.router.navigate(['heroes/list']);
+        this.hero = hero;
+        console.log({ hero });
+        return;
+      });
   }
 }
