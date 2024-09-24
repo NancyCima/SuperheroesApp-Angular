@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { SuperHeroesService } from '../../../superhero/services/superheroes.services';
+import { SuperHeroesService } from '../../services/superheroes.services';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Hero } from '../../../superhero/interfaces/hero.interfaces';
+import { Hero } from '../../interfaces/hero.interfaces';
 import { delay, switchMap } from 'rxjs';
 
 @Component({
