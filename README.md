@@ -2,7 +2,7 @@
 
 ---
 
-<img src='/superhero-app/public/icon.png' alt='Girl Power' style="border: 4px solid white; border-radius:12px;" />
+<img src='/superhero-app/public/icon.png' alt='Girl Power' style="border: 4px solid white; border-radius:12px; display: block; margin: auto;" />
 
 ---
 
