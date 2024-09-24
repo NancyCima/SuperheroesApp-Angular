@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { HomePageComponent } from './pages/home/home-page.component';
 import { AuthModule } from '../auth/auth.module';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
 
 @NgModule({
-  declarations: [Error404PageComponent, HomePageComponent, NavBarComponent],
+  declarations: [Error404PageComponent, HomePageComponent, SideNavComponent],
   imports: [CommonModule, AuthModule],
-  exports: [NavBarComponent]
+  exports: [SideNavComponent]
 })
 export class SharedModule {}
