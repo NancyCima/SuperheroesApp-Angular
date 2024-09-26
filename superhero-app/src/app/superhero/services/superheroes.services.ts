@@ -25,4 +25,8 @@ export class SuperHeroesService {
   addHero(hero: any): Observable<any> {
     return this.htpp.post<any>(`${this.baserUrl}/heroes`, hero);
   }
+
+  searchHero(term: string): Observable<any[]> {
+    return this.htpp.get<any[]>(`${this.baserUrl}?search=${term}`);
+  }
 }
