@@ -1,1 +1,15 @@
-<p>Search</p>
+<app-search-hero (searchHero)="onSearchHero($event)"></app-search-hero>
+
+<div *ngIf="loading">
+  <p>Cargando...</p>
+</div>
+
+<ul *ngIf="!loading && filteredHeros.length > 0">
+  <li *ngFor="let heroine of filteredHeros">
+    {{ heroine.name }} - {{ heroine.power }}
+  </li>
+</ul>
+
+<p *ngIf="!loading && filteredHeros.length === 0 && !error">No se encontraron heroínas.</p>
+
+<p *ngIf="error">{{ error }}</p>

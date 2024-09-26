@@ -1,6 +1,4 @@
-<div class="searchbar-container flex-fill">
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Buscar Heroe">
-    <button type="button" class="btn btn-dark">Buscar</button>
-  </div>
-</div>
+<mat-form-field appearance="outline">
+  <mat-label>Buscar Heroína</mat-label>
+  <input matInput [(ngModel)]="searchTerm" (input)="onSearch()">
+</mat-form-field>
