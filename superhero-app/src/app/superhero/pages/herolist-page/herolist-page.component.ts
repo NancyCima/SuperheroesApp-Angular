@@ -3,12 +3,32 @@ import { SuperHeroesService } from '../../services/superheroes.services';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Hero } from '../../interfaces/hero.interfaces';
 import { delay, switchMap } from 'rxjs';
+import { MatCard, MatCardTitle, MatCardHeader, MatCardSubtitle, MatCardContent } from '@angular/material/card';
+import { MatList, MatListItem } from '@angular/material/list';
+import { MatButton } from '@angular/material/button';
+import { MatGridList, MatGridTile } from '@angular/material/grid-list';
+import { MatSpinner } from '@angular/material/progress-spinner';
 
 @Component({
-  selector: 'app-herolist-page',
+  selector: 'app- MatCardTitleherolist-page',
+  standalone: true,
+  imports: [
+    MatGridList,
+    MatGridTile,
+    MatSpinner,
+    MatCard,
+    MatCardTitle,
+    MatCardHeader,
+    MatCardSubtitle,
+    MatCardContent,
+    MatList,
+    MatListItem,
+    MatButton
+  ],
   templateUrl: './herolist-page.component.html',
-  styles: ``,
+  styleUrls: ['./herolist-page.component.css']
 })
+
 export class HeroListPageComponent {
   hero?: Hero;
 
