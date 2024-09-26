@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'superhero',
-    loadChildren: () => import('./superhero/superhero.module').then(m => m.SuperHeroModule) // Lazy loading del módulo de superhéroes
+    loadChildren: () => import('./superhero/superhero.module').then(m => m.SuperHeroModule)
   },
   {
     path: '',
@@ -30,6 +30,7 @@ const routes: Routes = [
     redirectTo: '404'
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeroListPageComponent } from './pages/herolist-page/herolist-page.component';
-import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { SuperheroRoutingModule } from './superhero-routing.module';
-
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatSpinner } from '@angular/material/progress-spinner';
+import { HeroListPageComponent } from './pages/herolist-page/herolist-page.component';
+import { AddheroPageComponent } from './pages/addhero-page/addhero-page.component';
+
+// Ya no declares los componentes standalone en 'declarations'
 
 @NgModule({
-  declarations: [
-    HeroListPageComponent,
-    SearchPageComponent
-  ],
   imports: [
     CommonModule,
     SuperheroRoutingModule,
+    HeroListPageComponent,   // Los componentes standalone solo en imports
+    AddheroPageComponent,
     // Módulos de Angular Material
     MatGridListModule,
     MatCardModule,
@@ -25,4 +24,3 @@ import { MatSpinner } from '@angular/material/progress-spinner';
   ]
 })
 export class SuperHeroModule { }
-
