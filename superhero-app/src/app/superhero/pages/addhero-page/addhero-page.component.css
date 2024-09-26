@@ -6,7 +6,7 @@
     align-items: center;
     padding-top: 2%;
     color: #ba005c;
-    background-image: url('/superhero-app/public/fondo.jpg') !important;
+    background: linear-gradient(white, pink);
 }
 
 mat-card {
