@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatCard } from '@angular/material/card';
-import { MatCardTitle } from '@angular/material/card';
+import { MatCard, MatCardTitle } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { Router } from '@angular/router';
 import { MatListItem } from '@angular/material/list';
+import { Router } from '@angular/router';
 import { SuperHeroesService } from '../../services/superheroes.services';
 
 
@@ -37,7 +36,7 @@ export class AddheroPageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private heroesService: SuperHeroesService  // Inyecta el servicio aquí
+    private heroesService: SuperHeroesService
   ) {
     this.heroForm = this.fb.group({
       superHero: ['', Validators.required],
@@ -57,11 +56,11 @@ export class AddheroPageComponent implements OnInit {
       
       this.heroesService.addHero(newHero).subscribe(
         (response: any) => {
-          console.log('Héroe agregado:', response);
+          console.log('Heroína agregado:', response);
           this.heroForm.reset();           
         },
         (error: any) => {
-          console.error('Error al agregar héroe:', error);
+          console.error('Error al agregar heroína:', error);
         }
       );
     }
