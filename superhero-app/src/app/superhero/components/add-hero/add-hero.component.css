@@ -1,3 +1,19 @@
-:host {
-    display: block;
+mat-form-field {
+  width: 95%;
+  margin-bottom: 15px;
+}
+
+#btn {
+  background-color: #ba005c;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#btn:hover {
+    background-color: #a30051;
+    transform: scale(1.1);
 }

@@ -1,16 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import { MatCard, MatCardTitle } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatListItem } from '@angular/material/list';
-import { Router } from '@angular/router';
-import { SuperHeroesService } from '../../services/superheroes.services';
-
+import { AddHeroComponent } from '../../components/add-hero/add-hero.component';
 
 @Component({
   selector: 'app-addhero-page',
@@ -18,51 +9,10 @@ import { SuperHeroesService } from '../../services/superheroes.services';
   imports: [
     MatCard,
     MatCardTitle,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatIconModule,
-    MatFormFieldModule,
     MatToolbarModule,
-    ReactiveFormsModule,
-    MatListItem
+    AddHeroComponent
   ],
   templateUrl: './addhero-page.component.html',
   styleUrls: ['./addhero-page.component.css']
 })
-export class AddheroPageComponent implements OnInit {
-  heroForm: FormGroup;
-
-  constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private heroesService: SuperHeroesService
-  ) {
-    this.heroForm = this.fb.group({
-      superHero: ['', Validators.required],
-      alterEgo: ['', Validators.required],
-      firstAppearance: ['', Validators.required],
-      characters: ['', Validators.required],
-      creator: ['', Validators.required],
-      altImage: ['']
-    });
-  }
-
-  ngOnInit(): void {}
-
-  onSubmit() {
-    if (this.heroForm.valid) {
-      const newHero = this.heroForm.value;      
-      
-      this.heroesService.addHero(newHero).subscribe(
-        (response: any) => {
-          console.log('Heroína agregado:', response);
-          this.heroForm.reset();           
-        },
-        (error: any) => {
-          console.error('Error al agregar heroína:', error);
-        }
-      );
-    }
-  }
-}
+export class AddheroPageComponent {}
