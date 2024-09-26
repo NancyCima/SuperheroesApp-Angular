@@ -5,7 +5,6 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SingUpPageComponent } from './pages/sing-up-page/sing-up-page.component'
 
 const routes:Routes=[
-//localhost:4200/auth
     {
         path:'',
         component:LayoutPageComponent,
