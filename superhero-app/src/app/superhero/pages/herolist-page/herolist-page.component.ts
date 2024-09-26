@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { SuperHeroesService } from '../../services/superheroes.services';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Hero } from '../../interfaces/hero.interfaces';
@@ -10,7 +11,7 @@ import { MatGridList, MatGridTile } from '@angular/material/grid-list';
 import { MatSpinner } from '@angular/material/progress-spinner';
 
 @Component({
-  selector: 'app- MatCardTitleherolist-page',
+  selector: 'app-herolist-page',
   standalone: true,
   imports: [
     MatGridList,
@@ -23,7 +24,8 @@ import { MatSpinner } from '@angular/material/progress-spinner';
     MatCardContent,
     MatList,
     MatListItem,
-    MatButton
+    MatButton,
+    CommonModule
   ],
   templateUrl: './herolist-page.component.html',
   styleUrls: ['./herolist-page.component.css']
@@ -50,5 +52,9 @@ export class HeroListPageComponent {
         console.log({ hero });
         return;
       });
+  }
+
+  goBack() {
+    this.router.navigate(['/home']);
   }
 }
