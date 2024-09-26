@@ -21,4 +21,8 @@ export class SuperHeroesService {
       .get<Hero>(`${this.baserUrl}/heroes/${id}`)
       .pipe(catchError((error) => of(undefined)));
   }
+
+  addHero(hero: any): Observable<any> {
+    return this.htpp.post<any>(`${this.baserUrl}/heroes`, hero);
+  }
 }
