@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { catchError, of } from 'rxjs';
 import { Hero } from '../interfaces/hero.interfaces';
 import { enviroments } from '../../../enviroments/enviroment';
@@ -25,8 +25,13 @@ export class SuperHeroesService {
   addHero(hero: any): Observable<any> {
     return this.htpp.post<any>(`${this.baserUrl}/heroes`, hero);
   }
-
-  searchHero(term: string): Observable<any[]> {
-    return this.htpp.get<any[]>(`${this.baserUrl}?search=${term}`);
+  
+  searchHero(term: string): Observable<Hero[]> {
+    return this.htpp.get<Hero[]>(`${this.baserUrl}/heroes`).pipe(
+      map(heroes => heroes.filter(hero => 
+        hero.superhero.toLowerCase().includes(term.toLowerCase())
+      )),
+      catchError((error) => of([]))
+    );
   }
 }

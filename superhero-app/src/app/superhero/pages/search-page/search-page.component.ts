@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SuperHeroesService } from '../../services/superheroes.services';
 import { SearchHeroComponent } from '../../components/search-hero/search-hero.component';
+import { Hero } from '../../interfaces/hero.interfaces';
 
 @Component({
   selector: 'app-search-page',
@@ -11,28 +12,27 @@ import { SearchHeroComponent } from '../../components/search-hero/search-hero.co
   imports: [CommonModule, SearchHeroComponent]
 })
 export class SearchPageComponent {
-  loading = false;
+  filteredHeros: Hero[] = [];
+  loading: boolean = true;
   error: string | null = null;
-  filteredHeros: any[] = [];
 
-  constructor(private heroService: SuperHeroesService) {}
+  constructor(private superheroService: SuperHeroesService) {}
 
-  // Este método se activa cuando el hijo emite el término de búsqueda
-  onSearchHero(event: Event) {
-    const input = event.target as HTMLInputElement;
-    const term = input.value;
+  onSearchHero(term: string) {
+    if (term.trim().length === 0) return;
+
     this.loading = true;
-    this.error = '';
-    
-    this.heroService.searchHero(term).subscribe(
-      (data) => {
-        this.filteredHeros = data;
+    this.error = null;
+
+    this.superheroService.searchHero(term).subscribe({
+      next: (heroes) => {
+        this.filteredHeros = heroes;
         this.loading = false;
       },
-      (error) => {
-        this.error = 'Error al obtener heroínas. Inténtalo de nuevo más tarde.';
+      error: (err) => {
+        this.error = 'Error al buscar heroínas';
         this.loading = false;
       }
-    );
+    });
   }
 }
