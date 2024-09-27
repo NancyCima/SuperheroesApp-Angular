@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SuperHeroesService } from '../../services/superheroes.services';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Hero } from '../../interfaces/hero.interfaces';
-import { delay, switchMap } from 'rxjs';
 import { MatCard, MatCardTitle, MatCardHeader, MatCardSubtitle, MatCardContent } from '@angular/material/card';
 import { MatList, MatListItem } from '@angular/material/list';
 import { MatButton } from '@angular/material/button';
@@ -31,28 +30,20 @@ import { MatSpinner } from '@angular/material/progress-spinner';
   styleUrls: ['./herolist-page.component.css']
 })
 
-export class HeroListPageComponent {
-  hero?: Hero;
+export class HeroListPageComponent implements OnInit {
+
+  heroes:Hero[]=[]
 
   constructor(
-    public superheroservices: SuperHeroesService,
+    public heroServices: SuperHeroesService,
     public activateRoute: ActivatedRoute,
     public router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.activateRoute.params
-      .pipe(
-        delay(3000),
-        switchMap(({ id }) => this.superheroservices.getHeroById(id))
-      )
-      .subscribe((hero) => {
-        if (!hero) return this.router.navigate(['heroes/list']);
-        this.hero = hero;
-        console.log({ hero });
-        return;
-      });
-  }
+ ngOnInit(): void {
+   this.heroServices.getHeroes()
+   .subscribe(heroes=>this.heroes=heroes)
+ }
 
   goBack() {
     this.router.navigate(['/home']);

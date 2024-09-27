@@ -1,0 +1,47 @@
+/* Contenedor principal */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas */
+    margin: 20px; /* Espacio alrededor del contenedor */
+}
+.titulo {
+    text-align: center; /* Centra el título */
+    font-size: 24px; /* Tamaño de fuente */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    color: #3f51b5; /* Color de texto (puedes cambiarlo) */
+}
+/* Cada tarjeta */
+mat-card {
+    margin: 10px; /* Espacio entre tarjetas */
+    width: 300px; /* Ancho fijo para las tarjetas */
+    transition: transform 0.2s; /* Efecto de transición al hacer hover */
+}
+
+/* Efecto de hover para las tarjetas */
+mat-card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño ligeramente al pasar el ratón */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 600px) {
+    .grid {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Centra las tarjetas */
+    }
+
+    mat-card {
+        width: 100%; /* Tarjetas ocupan el 100% del ancho en pantallas pequeñas */
+    }
+}
+
+/* Estilos para pantallas medianas y grandes */
+@media (min-width: 601px) {
+    .grid {
+        flex-direction: row; /* Alinea las tarjetas en fila */
+    }
+
+    mat-card {
+        width: calc(50% - 20px); /* Tarjetas ocupan el 50% del ancho, menos márgenes */
+    }
+}
