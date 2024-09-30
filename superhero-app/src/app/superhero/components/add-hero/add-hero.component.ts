@@ -6,6 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
 import { SuperHeroesService } from '../../services/superheroes.services';
 
@@ -31,15 +32,15 @@ export class AddHeroComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private heroesService: SuperHeroesService
+    private heroesService: SuperHeroesService,
+    private snackBar: MatSnackBar
   ) {
     this.heroForm = this.fb.group({
-      superHero: ['', Validators.required],
-      alterEgo: ['', Validators.required],
-      firstAppearance: ['', Validators.required],
+      superhero: ['', Validators.required],
+      publisher: ['', Validators.required],
+      alter_ego: ['', Validators.required],
+      first_appearance: ['', Validators.required],
       characters: ['', Validators.required],
-      creator: ['', Validators.required],
-      altImage: ['']
     });
   }
 
@@ -51,12 +52,16 @@ export class AddHeroComponent implements OnInit {
 
       this.heroesService.addHero(newHero).subscribe(
         (response: any) => {
-          console.log('Heroína agregada:', response);
+          this.snackBar.open('Heroína agregada exitosamente', 'Cerrar', {
+            duration: 3000
+          });
           this.heroForm.reset();
-          this.router.navigate(['/list']);
+          this.router.navigate(['/home/list']);
         },
         (error: any) => {
-          console.error('Error al agregar heroína:', error);
+          this.snackBar.open('Error al agregar heroína', 'Cerrar', {
+            duration: 3000
+          });
         }
       );
     }

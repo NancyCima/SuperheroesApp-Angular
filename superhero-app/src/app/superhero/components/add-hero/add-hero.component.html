@@ -3,21 +3,21 @@
       <div class="col-md-6">
         <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
           <mat-label>Super heroína</mat-label>
-          <input matInput formControlName="superHero" placeholder="Nombre de la superheroína" required>
+          <input matInput formControlName="superhero" placeholder="Nombre de la superheroína" required>
         </mat-form-field>
       </div>
   
       <div class="col-md-6">
         <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
           <mat-label>Alter ego</mat-label>
-          <input matInput formControlName="alterEgo" placeholder="Nombre del alter ego" required>
+          <input matInput formControlName="alter_ego" placeholder="Nombre del alter ego" required>
         </mat-form-field>
       </div>
     </div>
   
     <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
       <mat-label>Primera aparición</mat-label>
-      <input matInput formControlName="firstAppearance" placeholder="Primera aparición de la heroína" required>
+      <input matInput formControlName="first_appearance" placeholder="Primera aparición de la heroína" required>
     </mat-form-field>
   
     <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
@@ -27,15 +27,10 @@
   
     <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
       <mat-label>Creador</mat-label>
-      <mat-select formControlName="creator" required>
+      <mat-select formControlName="publisher" required>
         <mat-option value="DC">DC - Comics</mat-option>
         <mat-option value="Marvel">Marvel - Comics</mat-option>
       </mat-select>
-    </mat-form-field>
-  
-    <mat-form-field appearance="fill" class="mb-2" style="width: 100%;">
-      <mat-label>Imagen Alternativa</mat-label>
-      <input matInput formControlName="altImage" placeholder="URL de imagen alternativa">
     </mat-form-field>
   
     <button id="btn" class="mb-4" mat-raised-button type="submit">
