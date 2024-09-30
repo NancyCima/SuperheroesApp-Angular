@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-search-hero',
   standalone: true,
   templateUrl: './search-hero.component.html',
-  styleUrls: ['./search-hero.component.css'],
   imports: [MatFormFieldModule, MatInputModule, FormsModule],
 })
 export class SearchHeroComponent {
