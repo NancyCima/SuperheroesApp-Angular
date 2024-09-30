@@ -2,12 +2,13 @@
   <mat-card>
     <mat-card-title>Sing up</mat-card-title>
     <mat-card-content>
-      <form>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
           <mat-label>Nombre</mat-label>
           <input
             matInput
             type="text"
+            formControlName="name"
             placeholder="Ingresa tu nombre"
             required
           />
@@ -17,32 +18,20 @@
           <mat-label>Email</mat-label>
           <input
             matInput
-            type="email"
             placeholder="Ingresa tu email"
+            formControlName="email"
             required
+            type="email"
           />
         </mat-form-field>
-
+        
         <mat-form-field appearance="fill">
-          <mat-label>Fecha de Nacimiento</mat-label>
-          <input matInput type="date" required />
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Género</mat-label>
-          <mat-select>
-            <mat-option value="option">Femenino</mat-option>
-            <mat-option value="option">Masculino</mat-option>
-            <mat-option value="option">Otro</mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Contaseña</mat-label>
+          <mat-label>Contraseña</mat-label>
           <input
             matInput
             type="password"
             placeholder="Ingresa tu contraseña"
+            formControlName="password"
             required
           />
         </mat-form-field>
@@ -52,14 +41,21 @@
           <input
             matInput
             type="password"
+            formControlName="confirmPassword"
             placeholder="Repite tu contraseña"
             required
           />
         </mat-form-field>
+
         <button mat-raised-button id="btn-cancel" type="button">
           Cancelar
         </button>
-        <button mat-raised-button id="btn-sign-up" type="submit">
+        <button
+          mat-raised-button
+          id="btn-sign-up"
+          type="submit"
+          [disabled]="!registerForm.valid"
+        >
           Registrarse
         </button>
       </form>

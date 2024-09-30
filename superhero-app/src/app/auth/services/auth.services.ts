@@ -24,4 +24,15 @@ export class AuthService {
       })
     );
   }
+
+  checkEmailExists(email: string): Observable<boolean>{
+    return this.http.get<any[]>(`${this.usersURL}?email=${email}`).pipe(
+      map((users) => users.length > 0)
+    )
+  }
+
+  registerUser(name: string, email: string, password: string): Observable<any>{
+    const newUser = {name, email, password };
+    return this.http.post(this.usersURL, newUser);
+  }
 }

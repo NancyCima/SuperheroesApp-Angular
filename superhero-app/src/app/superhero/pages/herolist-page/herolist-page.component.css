@@ -1,28 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
 
 .titulo {
-    text-align: center;
-    font-family: "Berkshire Swash", serif;
-    font-weight: 400;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #ba005c;
+  text-align: center;
+  font-family: "Berkshire Swash", serif;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ba005c;
 }
 
 .hero-container {
-    background: linear-gradient(white, pink);
+  background: linear-gradient(white, pink);
 }
 
 /* Forzar el diseño de dos columnas en app-hero-list */
-::ng-deep app-hero-list {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
-    width: 100% !important;
+app-hero-list {
+  /*
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  width: 100% !important;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5%;
 }
 
-/* Asegurar que cada héroe ocupe el ancho completo de su celda */
-::ng-deep app-hero-list > * {
-    width: 100% !important;
-    box-sizing: border-box !important;
-}
+/* Asegurar que cada héroe ocupe el ancho completo de su celda 
+app-hero-list > * {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}*/
