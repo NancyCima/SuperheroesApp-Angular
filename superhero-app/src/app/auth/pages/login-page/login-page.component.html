@@ -2,12 +2,13 @@
   <mat-card>
     <mat-card-title>Login</mat-card-title>
     <mat-card-content>
-      <form>
+      <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
         <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
           <input
             matInput
             type="email"
+            formControlName="email"
             placeholder="Ingresa tu email"
             required
           />
@@ -18,19 +19,19 @@
           <input
             matInput
             type="password"
+            formControlName="password"
             placeholder="Ingresa tu contraseña"
             required
           />
         </mat-form-field>
-        
-        <button mat-raised-button id="btn-login">Ingresar</button>
+
+        <button mat-raised-button type="submit" id="btn-login">Ingresar</button>
       </form>
 
       <div class="register-section">
         <p>¿No tienes cuenta?</p>
         <a routerLink="/signup" class="register-link">Registrarme</a>
       </div>
-
     </mat-card-content>
   </mat-card>
 </div>

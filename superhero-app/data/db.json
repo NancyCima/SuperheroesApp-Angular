@@ -3,7 +3,8 @@
     {
       "id": 1,
       "usuario": "Jane Smith",
-      "email": "jane.smith@example.com"
+      "email": "jane.smith@example.com",
+      "password": "1234"
     }
   ],
   "heroes": [

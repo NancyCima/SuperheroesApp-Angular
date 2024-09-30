@@ -6,6 +6,7 @@ import { SingUpPageComponent } from './pages/sing-up-page/sing-up-page.component
 import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { AppRoutingModule } from '../app-routing.module';
     LoginPageComponent,
     SingUpPageComponent,
   ],
-  imports: [CommonModule, AppRoutingModule, MaterialModule, RouterModule],
+  imports: [CommonModule, AppRoutingModule, MaterialModule, RouterModule, ReactiveFormsModule],
   exports: [LoginPageComponent, MaterialModule]
 })
 export class AuthModule {}
