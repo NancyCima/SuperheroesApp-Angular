@@ -1,0 +1,11 @@
+mat-card {
+    margin: 10px;
+    width: 400px;
+    transition: background-color 0.3s ease;
+}
+
+mat-card:hover {
+    transform: scale(1.05);
+    background-color: pink;
+    box-shadow: 0 2px 5px #ba005c;
+}

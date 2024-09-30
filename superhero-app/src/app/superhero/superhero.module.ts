@@ -8,13 +8,11 @@ import { MatSpinner } from '@angular/material/progress-spinner';
 import { HeroListPageComponent } from './pages/herolist-page/herolist-page.component';
 import { AddheroPageComponent } from './pages/addhero-page/addhero-page.component';
 
-// Ya no declares los componentes standalone en 'declarations'
-
 @NgModule({
   imports: [
     CommonModule,
     SuperheroRoutingModule,
-    HeroListPageComponent,   // Los componentes standalone solo en imports
+    HeroListPageComponent,
     AddheroPageComponent,
     // Módulos de Angular Material
     MatGridListModule,

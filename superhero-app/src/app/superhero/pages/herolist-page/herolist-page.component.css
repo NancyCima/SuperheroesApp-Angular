@@ -1,47 +1,28 @@
-/* Contenedor principal */
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centra las tarjetas */
-    margin: 20px; /* Espacio alrededor del contenedor */
-}
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+
 .titulo {
-    text-align: center; /* Centra el título */
-    font-size: 24px; /* Tamaño de fuente */
-    margin-bottom: 20px; /* Espacio debajo del título */
-    color: #3f51b5; /* Color de texto (puedes cambiarlo) */
-}
-/* Cada tarjeta */
-mat-card {
-    margin: 10px; /* Espacio entre tarjetas */
-    width: 300px; /* Ancho fijo para las tarjetas */
-    transition: transform 0.2s; /* Efecto de transición al hacer hover */
+    text-align: center;
+    font-family: "Berkshire Swash", serif;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ba005c;
 }
 
-/* Efecto de hover para las tarjetas */
-mat-card:hover {
-    transform: scale(1.05); /* Aumenta el tamaño ligeramente al pasar el ratón */
+.hero-container {
+    background: linear-gradient(white, pink);
 }
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 600px) {
-    .grid {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-        align-items: center; /* Centra las tarjetas */
-    }
-
-    mat-card {
-        width: 100%; /* Tarjetas ocupan el 100% del ancho en pantallas pequeñas */
-    }
+/* Forzar el diseño de dos columnas en app-hero-list */
+::ng-deep app-hero-list {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
 }
 
-/* Estilos para pantallas medianas y grandes */
-@media (min-width: 601px) {
-    .grid {
-        flex-direction: row; /* Alinea las tarjetas en fila */
-    }
-
-    mat-card {
-        width: calc(50% - 20px); /* Tarjetas ocupan el 50% del ancho, menos márgenes */
-    }
+/* Asegurar que cada héroe ocupe el ancho completo de su celda */
+::ng-deep app-hero-list > * {
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
