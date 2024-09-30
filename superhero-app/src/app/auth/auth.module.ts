@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthRoutingModule } from './auth.routing.module';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SingUpPageComponent } from './pages/sing-up-page/sing-up-page.component';
 import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
     LoginPageComponent,
     SingUpPageComponent,
   ],
-  imports: [CommonModule, AuthRoutingModule, MaterialModule, RouterModule],
+  imports: [CommonModule, AppRoutingModule, MaterialModule, RouterModule],
   exports: [LoginPageComponent, MaterialModule]
 })
 export class AuthModule {}
