@@ -10,13 +10,13 @@
   <!-- Sidenav (menú hamburguesa) -->
   <mat-sidenav #sidenav mode="side" [(opened)]="isOpen">
     <mat-nav-list>
-      <a mat-list-item routerLink="">
+      <a mat-list-item routerLink="/home/search">
         <mat-icon>search</mat-icon><span class="text">Buscar</span>
       </a>
-      <a mat-list-item routerLink="/superhero/list">
+      <a mat-list-item routerLink="/home/list">
         <mat-icon>list</mat-icon><span class="text">Listado de Heroínas</span>
       </a>
-      <a mat-list-item routerLink="/superhero/add">
+      <a mat-list-item routerLink="/home/add">
         <mat-icon>add</mat-icon><span class="text">Agregar Heroína</span>
       </a>
     </mat-nav-list>
