@@ -9,7 +9,6 @@ export class SearchHeroComponent {
 
   @Output() searchHero = new EventEmitter<string>();
 
-  // Emitir el término de búsqueda hacia el componente padre
   onSearch() {
     this.searchHero.emit(this.searchTerm);
   }

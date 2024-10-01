@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { enviroments } from '../../../enviroments/enviroment';
 import { map, Observable } from 'rxjs';
 import { User } from '../../superhero/interfaces/user';
 

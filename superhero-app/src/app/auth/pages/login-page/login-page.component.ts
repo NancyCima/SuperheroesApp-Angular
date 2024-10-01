@@ -41,11 +41,11 @@ export class LoginPageComponent {
             this.router.navigate(['/home']);
           } else {
             console.log('error');
-            alert('Correo malito');
+            alert('Correo incorrecto');
           }
         },
         (error: any) => {
-          console.error('error durante la autenticación', error);
+          console.error('Error durante la autenticación', error);
         }
       );
     }

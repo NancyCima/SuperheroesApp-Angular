@@ -44,7 +44,7 @@ export class SingUpPageComponent {
           } else {
             this.authService.registerUser(name, email, password).subscribe(
               () => {
-                alert('usuario registrado');
+                alert('Usuario registrado');
                 this.router.navigate(['/auth/login']);
               },
               (error) => {
