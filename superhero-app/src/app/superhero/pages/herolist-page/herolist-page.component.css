@@ -6,20 +6,12 @@
   font-weight: 400;
   font-size: 2rem;
   margin-bottom: 20px;
+  margin-top: 20px;
   color: #ba005c;
-}
-
-.hero-container {
-  background: linear-gradient(white, pink);
 }
 
 /* Forzar el diseño de dos columnas en app-hero-list */
 app-hero-list {
-  /*
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 20px !important;
-  width: 100% !important;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,9 +19,3 @@ app-hero-list {
   flex-direction: row;
   gap: 5%;
 }
-
-/* Asegurar que cada héroe ocupe el ancho completo de su celda 
-app-hero-list > * {
-  width: 100% !important;
-  box-sizing: border-box !important;
-}*/
