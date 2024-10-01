@@ -53,14 +53,18 @@ export class AddHeroComponent implements OnInit {
       this.heroesService.addHero(newHero).subscribe(
         (response: any) => {
           this.snackBar.open('Heroína agregada exitosamente', 'Cerrar', {
-            duration: 3000
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center'
           });
           this.heroForm.reset();
           this.router.navigate(['/home/list']);
         },
         (error: any) => {
           this.snackBar.open('Error al agregar heroína', 'Cerrar', {
-            duration: 3000
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center'
           });
         }
       );
