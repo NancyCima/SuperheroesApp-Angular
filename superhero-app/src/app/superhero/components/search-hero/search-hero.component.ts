@@ -1,13 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-search-hero',
   standalone: true,
   templateUrl: './search-hero.component.html',
-  imports: [MatFormFieldModule, MatInputModule, FormsModule],
+  imports: [FormsModule],
 })
 export class SearchHeroComponent {
   searchTerm: string = '';
