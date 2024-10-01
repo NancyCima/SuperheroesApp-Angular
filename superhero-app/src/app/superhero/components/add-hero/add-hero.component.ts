@@ -4,15 +4,11 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
 import { SuperHeroesService } from '../../services/superheroes.services';
+import { MaterialModule } from '../../../material/material.module';
 
 @Component({
   selector: 'app-addhero',
-  standalone: true,
   encapsulation: ViewEncapsulation.None,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-  ],
   templateUrl: './add-hero.component.html',
   styleUrls: ['./add-hero.component.css']
 })

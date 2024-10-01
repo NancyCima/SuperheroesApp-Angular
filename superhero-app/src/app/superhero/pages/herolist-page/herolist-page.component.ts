@@ -3,14 +3,10 @@ import { CommonModule } from '@angular/common';
 import { SuperHeroesService } from '../../services/superheroes.services';
 import { Hero } from '../../interfaces/hero.interfaces';
 import { HeroListComponent } from '../../components/hero-list/hero-list.component';
+import { MaterialModule } from '../../../material/material.module';
 
 @Component({
   selector: 'app-hero-list-page',
-  standalone: true,
-  imports: [
-    HeroListComponent,
-    CommonModule,
-  ],
   templateUrl: './herolist-page.component.html',
   styleUrls: ['./herolist-page.component.css']
 })

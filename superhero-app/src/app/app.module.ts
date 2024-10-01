@@ -6,10 +6,11 @@ import { SharedModule } from './shared/shared.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { SuperHeroModule } from './superhero/superhero.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule, SuperHeroModule],
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
