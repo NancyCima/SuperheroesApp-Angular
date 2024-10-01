@@ -1,12 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    height: 100vh;
-    background: linear-gradient(white, pink);
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.selected {
+    max-width: 500px;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 200px;
+    margin-top: 20px;
+}
+
+.selected h2 {
+    font-family: "Berkshire Swash", serif;
+    font-size: 22px;
+    color: #ba005c;
+    margin: 0;
+}
+
+.selected p {
+    font-family: "Poppins";
+    font-size: 16px;
+    color: black;
+    margin: 0;
 }
 
 ul {
@@ -14,6 +39,9 @@ ul {
     padding: 0;
     width: 100%;
     max-width: 500px;
+    max-height: 350px;
+    overflow-y: auto;
+    margin: 0;
 }
   
 
@@ -24,6 +52,7 @@ li {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
+    word-wrap: break-word;
 }
   
 li:hover {

@@ -2,11 +2,19 @@
   <app-search-hero (searchHero)="onSearchHero($event)"></app-search-hero>
 
   <ul>
-    <li *ngFor="let heroine of filteredHeros">
+    <li *ngFor="let heroine of filteredHeros" (click)="onHeroClick(heroine)">
       {{ heroine.superhero }}
     </li>
   </ul>
 
   <p *ngIf="!loading && filteredHeros.length === 0 && !error">No se encontraron heroínas</p>
   <p *ngIf="error" class="error">{{ error }}</p>
+
+  <div *ngIf="selectedHeroine" class="selected">
+    <h2>{{ selectedHeroine.superhero || 'Sin nombre' }}</h2>
+    <p><strong> Alter ego: </strong> {{selectedHeroine.alter_ego || 'Sin alter ego' }}</p>
+    <p><strong> Primera aparición: </strong> {{ selectedHeroine.first_appearance || 'Sin aparición' }}</p>
+    <p><strong> Personajes: </strong> {{ selectedHeroine.characters || 'Sin personajes' }}</p>
+    <p><strong> Editorial: </strong> {{ selectedHeroine.publisher || 'Sin editorial' }}</p>
+  </div>
 </div>

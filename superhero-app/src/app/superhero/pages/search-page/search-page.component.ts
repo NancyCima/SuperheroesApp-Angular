@@ -15,6 +15,7 @@ export class SearchPageComponent {
   filteredHeros: Hero[] = [];
   loading: boolean = true;
   error: string | null = null;
+  selectedHeroine: Hero | null = null; 
 
   constructor(private superheroService: SuperHeroesService) {}
 
@@ -23,6 +24,7 @@ export class SearchPageComponent {
 
     this.loading = true;
     this.error = null;
+    this.selectedHeroine = null;
 
     this.superheroService.searchHero(term).subscribe({
       next: (heroes) => {
@@ -34,5 +36,8 @@ export class SearchPageComponent {
         this.loading = false;
       }
     });
+  }
+  onHeroClick(hero: Hero) {
+    this.selectedHeroine = hero;
   }
 }
