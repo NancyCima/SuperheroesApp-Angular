@@ -47,7 +47,7 @@
           />
         </mat-form-field>
 
-        <button mat-raised-button id="btn-cancel" type="button">
+        <button routerLink="/auth/login" mat-raised-button id="btn-cancel" type="button">
           Cancelar
         </button>
         <button
@@ -59,6 +59,12 @@
           Registrarse
         </button>
       </form>
+
+      <div class="login-section">
+        <p>¿Ya tienes cuenta?</p>
+        <a routerLink="/" class="login-link">Ingresar</a>
+      </div>
+      
     </mat-card-content>
   </mat-card>
 </div>

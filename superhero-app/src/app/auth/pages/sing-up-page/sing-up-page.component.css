@@ -1,17 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .sign-up-container {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5%;
   color: #ba005c;
+  font-family: "Poppins";
+  font-size: 1rem;
 }
 
 mat-card {
   width: 100%;
   max-width: 600px;
-  padding: 20px;
+  padding: 30px;
 }
 
 mat-card-title {
@@ -45,4 +48,20 @@ mat-form-field {
 #btn-sign-up {
   background-color: #ba005c;
   color: white;
+}
+
+.login-section{
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p{
+  color: black;
+}
+
+.login-link{
+  color: #ba005c;
+  width: auto;
 }

@@ -1,30 +1,39 @@
 <div class="side-nav">
-<mat-toolbar color="primary">
-  <button mat-icon-button (click)="toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>SuperHeroine Squad</span>
-</mat-toolbar>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>SuperHeroine Squad</span>
+    <span class="spacer"></span>
+    <button
+      routerLink="/auth/login"
+      mat-raised-button
+      id="btn-logut"
+      type="button"
+    >
+      Logout
+    </button>
+  </mat-toolbar>
 
-<mat-sidenav-container class="sidenav-container">
-  <!-- Sidenav (menú hamburguesa) -->
-  <mat-sidenav #sidenav mode="side" [(opened)]="isOpen">
-    <mat-nav-list>
-      <a mat-list-item routerLink="/home/search">
-        <mat-icon>search</mat-icon><span class="text">Buscar</span>
-      </a>
-      <a mat-list-item routerLink="/home/list">
-        <mat-icon>list</mat-icon><span class="text">Listado de Heroínas</span>
-      </a>
-      <a mat-list-item routerLink="/home/add">
-        <mat-icon>add</mat-icon><span class="text">Agregar Heroína</span>
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
+  <mat-sidenav-container class="sidenav-container">
+    <!-- Sidenav (menú hamburguesa) -->
+    <mat-sidenav #sidenav mode="side" [(opened)]="isOpen">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home/search">
+          <mat-icon>search</mat-icon><span class="text">Buscar</span>
+        </a>
+        <a mat-list-item routerLink="/home/list">
+          <mat-icon>list</mat-icon><span class="text">Listado de Heroínas</span>
+        </a>
+        <a mat-list-item routerLink="/home/add">
+          <mat-icon>add</mat-icon><span class="text">Agregar Heroína</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
 
-  <!-- Contenido principal -->
-  <mat-sidenav-content>
-    <ng-content></ng-content>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <!-- Contenido principal -->
+    <mat-sidenav-content>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

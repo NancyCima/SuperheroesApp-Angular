@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-.side-nav{
+.side-nav {
   height: 100vh;
   overflow: hidden;
 }
@@ -17,13 +17,15 @@
   flex-grow: 1;
 }
 
-.mat-sidenav{
+.mat-sidenav {
   background-color: #ffd9e1;
   border-radius: 0;
 }
 
 mat-toolbar {
   position: sticky;
+  display: flex;
+  justify-content: space-between;
   top: 0;
   z-index: 2;
   background-color: #ffd9e1;
@@ -41,11 +43,19 @@ span {
   margin: 10px;
 }
 
-a{
+a {
   display: flex;
   align-content: center;
 }
 
-span.text{
+span.text {
   font-family: "Poppins";
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+#btn-logout {
+  margin-right: 30px;
 }
