@@ -1,6 +1,8 @@
 mat-card {
     margin: 10px;
     width: 380px;
+    min-height: auto;
+    max-height: 100%;
     transition: background-color 0.3s ease;
 }
 
