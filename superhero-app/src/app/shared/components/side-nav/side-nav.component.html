@@ -16,7 +16,6 @@
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container">
-    <!-- Sidenav (menú hamburguesa) -->
     <mat-sidenav #sidenav mode="side" [(opened)]="isOpen">
       <mat-nav-list>
         <a mat-list-item routerLink="/home/search">
@@ -31,7 +30,6 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <!-- Contenido principal -->
     <mat-sidenav-content>
       <ng-content></ng-content>
     </mat-sidenav-content>

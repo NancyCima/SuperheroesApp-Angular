@@ -5,7 +5,6 @@ import { User } from '../../superhero/interfaces/user';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  // baserUrl: string = enviroments.baseUrl;
   private usersURL = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) {}

@@ -10,7 +10,6 @@
   color: #ba005c;
 }
 
-/* Forzar el diseño de dos columnas en app-hero-list */
 app-hero-list {
   display: flex;
   align-items: center;
