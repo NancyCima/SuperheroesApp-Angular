@@ -2,7 +2,9 @@
 
 ---
 
-<img src='/superhero-app/public/icon.png' alt='Girl Power' style="display: block; margin: auto;" />
+<p align="center">
+  <img src='/superhero-app/public/icon.png' alt='Girl Power' />
+</p>
 
 ---
 
@@ -24,7 +26,7 @@ Esta es una aplicación web creada con **Angular**, donde puedes gestionar una l
 - **Angular**: El corazón de nuestra aplicación, diseñado para la creación de interfaces dinámicas.
 - **TypeScript**: La base sólida para desarrollar con un código claro y eficiente.
 - **json-server**: La fuente de datos que nos permite manejar nuestra propia colección de heroínas.
-- **Bootstrap & Angular Material**: Haciendo que cada interfaz luzca moderna y atractiva, como las heroínas que representa.
+- **Angular Material**: Haciendo que cada interfaz luzca moderna y atractiva, como las heroínas que representa.
 
 ## ⚙️ Instalación y Ejecución
 
@@ -43,10 +45,33 @@ Usa **npm** para instalar las dependencias necesarias:
 npm install
 ```
 
-### Paso 3: Iniciar la aplicación
+### Paso 3: Ejecutar la API Local
 
-Pon la aplicación en marcha con uno de estos comandos:
+Para levantar la API con los datos de las heroínas:
 
+```bash
+cd superhero-app/data
+```
+
+```bash
+npx json-server db.json
+```
+
+La API estará activa en `http://localhost:3000` y podras visualizar a los usuarios y heroinas en los siguientes endpoints:
+- http://localhost:3000/users
+- http://localhost:3000/heroes
+
+
+### Paso 4: Iniciar la aplicación
+
+Pon la aplicación en marcha siguendo estos simples pasos:
+
+- Primer paso:
+```bash
+cd superhero-app
+```
+
+- Segundo paso:
 ```bash
 npm start
 ```
@@ -57,17 +82,15 @@ o
 ng serve
 ```
 
-Abre tu navegador y visita `http://localhost:4200` para ver al escuadrón de heroínas en acción.
+ Abre tu navegador y visita `http://localhost:4200` para ver al escuadrón de heroínas en acción.
 
-### Paso 4: Ejecutar la API Local
+🌟 **¡Todo listo para que añadas y gestiones tus heroínas!** 🌟
 
-Para levantar la API con los datos de las heroínas:
+## 🌈 Funcionalidades Impulsadas por el Poder Femenino
 
-```bash
-npm run back
-```
-
-La API estará activa en `http://localhost:3000`. ¡Lista para que añadas y gestiones tus heroínas!
+- **🔍 Buscar Heroínas**: Encuentra a tu heroína favorita con tan solo unas letras.
+- **➕ Añadir Heroínas**: Completa el formulario y deja que tu nueva heroína se una al equipo.
+- **🔐 Iniciar Sesión**: Personaliza tu experiencia iniciando sesión para gestionar tus heroínas.
 
 ## 🎨 Un Diseño Dedicado a la Grandeza
 
@@ -77,15 +100,11 @@ Para nosotras, no basta con que las heroínas sean poderosas. Queremos que se ve
 - **Buscador de Heroínas**: Navega entre heroínas rápidamente con un buscador elegante y efectivo.
 - **Formulario Intuitivo**: Añadir una nueva heroína nunca ha sido tan fácil ni divertido.
 
-## 🌈 Funcionalidades Impulsadas por el Poder Femenino
-
-- **🔍 Buscar Heroínas**: Encuentra a tu heroína favorita con tan solo unas letras.
-- **➕ Añadir Heroínas**: Completa el formulario y deja que tu nueva heroína se una al equipo.
-- **🔐 Iniciar Sesión**: Personaliza tu experiencia iniciando sesión para gestionar tus heroínas.
-
 
 ## 💪🌸¡The future is female! 👩🏽​👩🏼‍💻​
 
-Este proyecto es solo el primer paso. La misión continúa, y tu aporte es vital. Siéntete libre de mejorar y expandir este universo de heroínas poderosas. ¡Juntas, podemos hacer que este proyecto llegue a lo más alto!
+Este proyecto es solo el primer paso. La misión continúa, y tu aporte es vital. Siéntete libre de mejorar y expandir este universo de heroínas poderosas. 
+
+¡Juntas, podemos hacer que este proyecto llegue a lo más alto!
 
 <img src='/superhero-app/public/the-future-is-female.jpg' alt='The future is female' style="border: 4px solid white; border-radius:12px;" />
