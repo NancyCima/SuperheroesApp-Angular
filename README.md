@@ -86,6 +86,13 @@ ng serve
 
 🌟 **¡Todo listo para que añadas y gestiones tus heroínas!** 🌟
 
+## 🪪 Credenciales
+
+ Las credenciales preexistentes para el login son:
+- **usuario:** Jane Smith
+- **email:** jane.smith@example.com
+- **password:** 1234
+
 ## 🌈 Funcionalidades Impulsadas por el Poder Femenino
 
 - **🔍 Buscar Heroínas**: Encuentra a tu heroína favorita con tan solo unas letras.
